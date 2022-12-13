@@ -7,7 +7,7 @@ const selectMotivoCode = "5f68dc9283525d222d61b88c";
 
 setInterval(() => {
     function Main() {
-        sendMessage(); //enviar mensagem de finalização
+        //sendMessage(); //enviar mensagem de finalização *** em desenvolvimento ***
         selectNextClient(); //função para selecionar o próximo cliente. Bug encontrado - não é possível listar todos os clientes.
         changeToFinished(); //mudar os status da conversa para finalizado
 
@@ -18,11 +18,12 @@ setInterval(() => {
     }
 
     function sendMessage() {
+        const textField = document.getElementById("input_envio_msg");
+
         if (!message) {
             message = window.prompt("Mensagem de finalização: ");
         }
 
-        let textField = document.getElementById("input_envio_msg");
         textField.innerText = message;
 
         const keyboardEvent = new KeyboardEvent('keydown', {
