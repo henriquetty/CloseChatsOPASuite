@@ -18,12 +18,11 @@ setInterval(() => {
     }
 
     function sendMessage() {
-        const textField = document.getElementById("input_envio_msg");
-
         if (!message) {
             message = window.prompt("Mensagem de finalização: ");
         }
 
+        const textField = document.getElementById("input_envio_msg");
         textField.innerText = message;
 
         const keyboardEvent = new KeyboardEvent('keydown', {
